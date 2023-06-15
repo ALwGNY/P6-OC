@@ -95,7 +95,7 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+nav li:hover {
 	color: #B1663C;
 }
 #introduction {
@@ -125,6 +125,30 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+.category {
+	display: flex;
+	font-size: 16px;
+	color: #1D6154;
+	justify-content:center;
+	gap: 10px; 
+	margin: 50px;
+	font-style: inherit;
+}
+.category li {
+	display: flex;
+	justify-content: center;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	padding: 9px;
+	min-width: 60px;
+
+}
+.categoryhover li {
+	background-color: #1D6154;
+	color: white;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
