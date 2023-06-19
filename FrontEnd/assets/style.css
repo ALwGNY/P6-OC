@@ -135,7 +135,7 @@ nav li:hover {
 	margin: 50px;
 	font-style: inherit;
 }
-.category li {
+.filter {
 	display: flex;
 	justify-content: center;
 	border: 1px solid #1D6154;
@@ -144,7 +144,12 @@ nav li:hover {
 	min-width: 60px;
 
 }
-.categoryhover li {
+.filter:hover {
+	background-color: #1D6154;
+	color: white;
+}
+
+.active {
 	background-color: #1D6154;
 	color: white;
 }
@@ -156,7 +161,12 @@ nav li:hover {
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 }
-
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
 .gallery img {
 	width: 100%;
 
