@@ -1,8 +1,7 @@
 fetch('http://localhost:5678/api/works')
   .then(response => response.json())
   .then(data => {
-    console.table(data)
-
+    
     const divGallery = document.querySelector('.gallery') 
 
     data.forEach(function (imageData) {
@@ -26,16 +25,17 @@ fetch('http://localhost:5678/api/works')
       divGallery.appendChild(figureElement)  
       
     })
-    const filterItem = document.querySelector('.category')
 
+    const filterItem = document.querySelector('.category')
     const filterImg = document.querySelectorAll('.image')
-    
 
     filterItem.onclick = (selectedItem) => {
       if(selectedItem.target.classList.contains("filter")){
         filterItem.querySelector('.active').classList.remove("active")
         selectedItem.target.classList.add('active')
+
         let filterId = selectedItem.target.getAttribute('data-id')
+
         filterImg.forEach(function (image) {
           let filterImages = image.getAttribute("data-id")
           if ((filterImages == filterId || filterId =="0")) {
@@ -49,4 +49,5 @@ fetch('http://localhost:5678/api/works')
       }
     }
   })
-
+var storageToken = localStorage.getItem('token')
+console.log(storageToken)
