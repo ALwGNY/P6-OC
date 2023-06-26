@@ -21,22 +21,38 @@
             </nav>
         </header>
         <main>
-            <form class="registration" id="login-form">
+            <form class="registration" id="login">
                 <h2>Log In</h2>
-                <div>          
-                    <p>E-mail</p>
-                    <input type="email" id="email">
+                <div class="identifier" id="identifier">
+                    <div>      
+                       <p>E-mail</p>
+                        <input type="email" id="email">
+                    </div>
+                    <div>
+                        <p>Mot de passe</p>
+                        <input type="password" name="" id="password">
+                    </div>       
+                    <button type="submit" id="button">Se connecter</button>
+                    <span>Mot de passe oublier</span>
                 </div>
-                <div>
-                    <p>Mot de passe</p>
-                    <input type="password" name="" id="password">
-                </div>       
-                <button type="submit" id="button">Se connecter</button>
-                <span>Mot de passe oublier</span> 
-            </form>                 
+                <div class="column">
+                    <div class="error">
+                        <span class="circle">
+                        <span class="cross"></span>
+                        <span class="crossH"></span>
+                        </span>                    
+                    </div>
+                    <div class="errortext">
+                        <h3>ERROR</h3>
+                        <p>Invalid login</p>
+                        <button class="buttonretry">Retry</button>
+                    </div>
+                </div>
+            </form> 
+                           
         </main>  
         <footer>
-            <h3>Mentions légales</h3>
+            <h4>Mentions légales</h4>
         </footer>
     </div>
 </body>

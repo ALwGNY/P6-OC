@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<script src="https://kit.fontawesome.com/a18847257a.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
@@ -13,15 +14,21 @@
 </head>
 <body>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-	<nav>
-		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li><a href="./Login.html">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
+	<div class="edition" id="edition">
+		<p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
+		<button>Publier les changements</button>  
+	</div> 
+	<div class="navbar"> 
+	    <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	    <nav>
+		    <ul>
+			    <li>projets</li>
+			    <li>contact</li>
+			    <li><a class="login" href="./Login.html">login</a></li>
+			    <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		    </ul>
+	    </nav>
+	</div>
 </header>
 <main>
 	<section id="introduction">
@@ -42,6 +49,7 @@
 			<li class="filter" data-id="1">Objets</li>
 			<li class="filter" data-id="2">Appartements</li>
 			<li class="filter" data-id="3">Hôtels & restaurants</li>
+			<li class="modifier" id="modifieredition"><i class="fa-regular fa-pen-to-square"></i>modifier</li>
 		</ul>
 		<div class="gallery">		
 		</div>

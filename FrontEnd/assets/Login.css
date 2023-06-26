@@ -109,6 +109,7 @@ nav li:hover {
 	color: #B1663C;
 }
 
+
 .registration {
     display: flex;
     flex-direction: column;
@@ -137,6 +138,93 @@ nav li:hover {
 	text-decoration: underline;
 }
 
+.registration .column {
+	position: absolute;
+}
+
+.identifier {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	align-items: center;
+}
+
+.column {
+	display:none;	
+	top: 350px;
+}
+
+.error {
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	height: 80px;
+	width: 300px;
+	background-color:salmon;
+	border-radius: 15px 15px 0px 0px;	
+}
+
+.circle {
+	display: flex;
+	top:20px;
+	left:120px;
+	width: 30px;
+	height: 30px;		
+	border: 3px solid white;
+	border-radius: 50%;
+	transform: rotate(45deg);
+	
+}
+
+.cross {
+	position: relative;
+	top: 13px;
+	left: 2px;
+	background-color:white;
+	height: 4px;
+	min-width: 26px;
+	transform: rotate(90deg);
+	color: white;
+	border-radius: 10px ;
+}
+
+.crossH {
+	position: relative;
+	top: 13px;
+	right: 24px;
+	background-color:white;
+	height: 4px;
+	min-width: 26px;
+	
+	color: white;
+	border-radius: 10px ;
+}
+
+.errortext {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center ;
+	background-color: white;
+	max-width: 300px;
+}
+
+.errortext h3 {
+	color: darksalmon;
+	font-weight: 500;
+	line-height: 20px;
+}
+
+.buttonclose {
+	margin: 10px;
+}
+
+.none {
+	display: none;
+}
+.block {
+	display: block;
+}
 
 footer {
 	position: absolute ;
@@ -150,6 +238,6 @@ footer {
 	justify-content: flex-end;
 }
 
-footer h3 {
+footer h4 {
 	padding-right: 100px;
 }

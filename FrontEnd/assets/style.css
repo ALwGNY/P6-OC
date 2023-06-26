@@ -55,9 +55,41 @@ body {
 }
 header {
 	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
+	flex-direction: column;
 }
+.edition {
+	display: flex;
+	background-color: black;
+	color: white;
+	justify-content: center;
+	height: 50px;
+	align-items: center;
+}
+.edition p {
+	display: flex;
+	gap: 10px;
+	margin: 0px 30px;
+}
+.edition button{
+	background-color: white;
+	border: none;
+	height: 30px;
+	border-radius: 25px;
+	padding: 0px 20px;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0px;
+}
+
+.login {
+	color: black;
+	text-decoration: none;
+}
+
+
 section {
 	margin: 50px 0
 }
@@ -144,9 +176,10 @@ nav li:hover {
 	min-width: 60px;
 
 }
-.filter:hover {
-	background-color: #1D6154;
-	color: white;
+
+.modifier {
+	display: flex;
+	align-items: center;
 }
 
 .active {
@@ -166,6 +199,9 @@ nav li:hover {
 }
 .show {
 	display: block;
+}
+.showflex {
+	display: flex;
 }
 .gallery img {
 	width: 100%;

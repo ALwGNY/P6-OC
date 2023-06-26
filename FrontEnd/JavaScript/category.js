@@ -49,5 +49,22 @@ fetch('http://localhost:5678/api/works')
       }
     }
   })
-var storageToken = localStorage.getItem('token')
-console.log(storageToken)
+
+
+const storageToken = localStorage.getItem('token')
+
+
+const modeEdition = document.getElementById('edition')
+const modifierEdition = document.getElementById('modifieredition')
+const access = localStorage.getItem('true')
+
+if (access == 'true' ) {
+  modeEdition.classList.add('showflex')
+  modifierEdition.classList.add('showflex')
+  console.log(storageToken)
+ } else {
+  modeEdition.classList.add('hide')
+  modifierEdition.classList.add('hide')
+ }
+
+
