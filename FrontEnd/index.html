@@ -72,14 +72,17 @@
 							        <label for="file" class="labelimg">+ Ajouter photo</label>
 								    <p id="imgdesc">jpg, png : 4mo max</p>
 							    </div>
-							    <div>
-								    <label for="title" class="label">Title</label>
+							    <div id="error">
+								    <label for="text" class="label">Title</label>
 								    <input type="text" class="inputtext" id="title">
 							    </div> 
 							    <div class="borderbot">
 								    <label for="dropdown-menu" class="label">Catégorie</label>
-								    <select id="dropdown-menu" class="dropdown">
-										<option id=optionvalue value="" selected disabled></option>
+								    <select id="category" name="categorie" class="dropdown-menu">
+										<option value=""></option>
+										<option value="1">Objet</option>
+										<option value="2">Appartements</option>
+										<option value="3">Hôtel et restaurants</option>
 									</select>
 							    </div>
 							    <button class="valid">Valider</button>

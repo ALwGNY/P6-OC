@@ -40,7 +40,7 @@ fetch('http://localhost:5678/api/works')
             }
           })
             .then(response => {
-              if (response.ok) {                  
+              if (response.ok) {                
                 const image = divGallery.querySelector(`.image[id="${imageId}"]`)
                 if (image) {
                   divGallery.removeChild(image)
@@ -75,22 +75,8 @@ arrowLeft.addEventListener('click', function(event) {
   deletWorks.classList.add('show') 
 })
 
-// RECUPERATION DES CATEGORIES
-
-const dropdownMenu = document.querySelector('#dropdown-menu')
-
-fetch('http://localhost:5678/api/categories')
-  .then(response => response.json())
-  .then(data => {
-    data.forEach(category => {
-      const option = document.createElement('option')
-      option.value = category.name
-      option.textContent = category.name
-      dropdownMenu.appendChild(option)
-    })
-  })
-
-  const fileInput = document.getElementById('file')
+// IMAGE PREVIEW
+const fileInput = document.getElementById('file')
   const inputImg = document.querySelector('.inputimg')
   const imgDesc = document.getElementById('imgdesc')
   
@@ -107,20 +93,29 @@ fetch('http://localhost:5678/api/categories')
   })
 
 // AJOUT DE NOUVEAUX TRAVAUX
-
 const storageToken = localStorage.getItem('token')
 
 const inputTitle = document.getElementById('title')
-const categoryData = document.getElementById('dropdown-menu')
-const gallery = document.querySelector('.gallery')
+const categoryData = document.getElementById('category')
 
 addWorks.addEventListener('submit', (event) => {
   event.preventDefault()
 
-  const fileInput = document.getElementById('file')
   const file = fileInput && fileInput.files[0]
-  const title = inputTitle.value
-  const category = categoryData.value[0]
+  const title = inputTitle.value.trim()
+  const category = categoryData.value
+
+  if (!file || !title || !category) {
+
+    const errorMessage = document.createElement('span')
+    const errorDiv = document.getElementById('error')
+
+
+    errorMessage.classList.add('formadd', 'error')
+    errorMessage.innerHTML = '* Veulliez remplir tout les champs obligatoire'
+
+    errorDiv.appendChild(errorMessage)   
+  }
 
   const formData = new FormData()
   formData.append('image', file)
@@ -131,13 +126,12 @@ addWorks.addEventListener('submit', (event) => {
     method: 'POST',
     body: formData,
     headers: {
-      'authorization': `Bearer ${storageToken}`
+      'accept': 'application/json',
+      'authorization': `Bearer ${storageToken}`,
     }
   
   })
   .then(_response => {
-  console.log()
-
   })
   .catch(error => {
     console.error('Une erreur s\'est produite lors de l\'envoi du formulaire :', error)
