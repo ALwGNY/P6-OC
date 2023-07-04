@@ -11,20 +11,22 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="./JavaScript/category.js" defer></script>
+	<script type="module" src="./JavaScript/Modal.js" defer></script>
+
 </head>
 <body>
 <header>
-	<div class="edition" id="edition">
+	<div class="edition modeedition">
 		<p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
 		<button>Publier les changements</button>  
 	</div> 
 	<div class="navbar"> 
 	    <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 	    <nav>
-		    <ul>
+		    <ul> 
 			    <li>projets</li>
 			    <li>contact</li>
-			    <li><a class="login" href="./Login.html">login</a></li>
+			    <li id="loginbutton"><a class="login" href="./Login.html">login</a></li>
 			    <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		    </ul>
 	    </nav>
@@ -34,8 +36,10 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<p class="modeedition"><i class="fa-regular fa-pen-to-square"></i> modifier</p>
 		</figure>
 		<article>
+			<span class="modeedition"><i class="fa-regular fa-pen-to-square"></i> modifier</span>
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -43,13 +47,55 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="buttonedition">
+		    <h2>Mes Projets</h2>
+			<div class="container">
+				<a data-modal="modal-one" class="modeedition"><i class="fa-regular fa-pen-to-square"></i> modifier</a>
+		    </div>
+			<div class="modal" id="modal-one">
+				<div class="modal-bg modal-exit">
+					<div class="modal-container">
+						<form class="deletworks">
+							<div class="deletgallery" id="deletgallery">
+						        <h2>Galerie photo</h2>
+						        <div class="gallerymodal "></div>									
+					            <button class="addfoto" id="addfoto">Ajouter une photo</button>
+					            <p>Supprimer la galerie</p>
+						    </div>
+						</form>
+						<form class="addworks hide">
+						    <div class="formadd" id="formadd">
+							    <h2>Ajout photo</h2>
+							    <div class="inputimg">
+								    <i class="fa-sharp fa-regular fa-image"></i>
+							        <input type="file" id="file" class="hide"/>
+							        <label for="file" class="labelimg">+ Ajouter photo</label>
+								    <p id="imgdesc">jpg, png : 4mo max</p>
+							    </div>
+							    <div>
+								    <label for="title" class="label">Title</label>
+								    <input type="text" class="inputtext" id="title">
+							    </div> 
+							    <div class="borderbot">
+								    <label for="dropdown-menu" class="label">Catégorie</label>
+								    <select id="dropdown-menu" class="dropdown">
+										<option id=optionvalue value="" selected disabled></option>
+									</select>
+							    </div>
+							    <button class="valid">Valider</button>
+							    <span id="previous"><i class="fa-solid fa-arrow-left"></i></span>
+						    </div>
+					    </form>
+						<span class="modal-close modal-exit"><i class="fa-solid fa-xmark"></i></span>
+				    </div>
+			    </div>
+			</div>
+		</div>
 		<ul class="category">
 			<li class="filter active" data-id="0">Tous</li>
 			<li class="filter" data-id="1">Objets</li>
 			<li class="filter" data-id="2">Appartements</li>
 			<li class="filter" data-id="3">Hôtels & restaurants</li>
-			<li class="modifier" id="modifieredition"><i class="fa-regular fa-pen-to-square"></i>modifier</li>
 		</ul>
 		<div class="gallery">		
 		</div>

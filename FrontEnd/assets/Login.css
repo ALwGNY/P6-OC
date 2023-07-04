@@ -207,6 +207,7 @@ nav li:hover {
 	align-items: center ;
 	background-color: white;
 	max-width: 300px;
+	gap: 10px;
 }
 
 .errortext h3 {

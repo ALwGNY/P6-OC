@@ -9,18 +9,18 @@ login.addEventListener("submit", function(event) {
     var email = document.getElementById("email").value
     var password = document.getElementById("password").value
   
-    var data = {
-      email : email,
-      password: password
-    }
 
     fetch('http://localhost:5678/api/users/login', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
     })
+    
     .then(function(response) {
       if (response.ok) {
         return response.json()
@@ -31,15 +31,11 @@ login.addEventListener("submit", function(event) {
         retry.addEventListener('click', function() {
           location.reload();
         });
-        throw new Error("Erreur lors de la connexion")
       }
     })
 
     .then(function(data) {
       var token = data.token
-      const access = true
-      
-      localStorage.setItem('true', access)
       localStorage.setItem('token', token)
       window.location.href='http://127.0.0.1:5500/FrontEnd/index.html'
   
