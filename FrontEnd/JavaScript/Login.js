@@ -24,14 +24,13 @@ login.addEventListener("submit", function(event) {
     .then(function(response) {
       if (response.ok) {
         return response.json()
-      } 
-      else {
+      } else {
         error.classList.add('block')
         identifier.classList.add('none')
         retry.addEventListener('click', function() {
           location.reload();
         });
-      }
+      }  
     })
 
     .then(function(data) {

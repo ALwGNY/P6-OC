@@ -81,20 +81,20 @@ arrowLeft.addEventListener('click', function(event) {
 
 // IMAGE PREVIEW
 const fileInput = document.getElementById('file')
-  const inputImg = document.querySelector('.inputimg')
-  const imgDesc = document.getElementById('imgdesc')
+const inputImg = document.querySelector('.inputimg')
+const imgDesc = document.getElementById('imgdesc')
   
-  fileInput.addEventListener('change', (event) => {
-    const file = event.target.files[0]
+fileInput.addEventListener('change', (event) => {
+  const file = event.target.files[0]
   
-    const imgElement = document.createElement('img')
-    imgElement.src = URL.createObjectURL(file)
+  const imgElement = document.createElement('img')
+  imgElement.src = URL.createObjectURL(file)
   
-    imgDesc.innerHTML = ""
-    inputImg.innerHTML = ""
+  imgDesc.innerHTML = ""
+  inputImg.innerHTML = ""
   
-    inputImg.appendChild(imgElement)
-  })
+  inputImg.appendChild(imgElement)
+})
 
 // AJOUT DE NOUVEAUX TRAVAUX
 
@@ -104,20 +104,20 @@ const categoryData = document.getElementById('category')
 addWorks.addEventListener('submit', (event) => {
   event.preventDefault()
 
-  const file = fileInput && fileInput.files[0]
+  const file = fileInput.files[0]
   const title = inputTitle.value.trim()
   const category = categoryData.value
 
   if (!file || !title || !category) {
-
+    
     const errorMessage = document.createElement('span')
     const errorDiv = document.getElementById('error')
-
 
     errorMessage.classList.add('formadd', 'error')
     errorMessage.innerHTML = '* Veulliez remplir tout les champs obligatoire'
 
-    errorDiv.appendChild(errorMessage)   
+    errorDiv.appendChild(errorMessage)  
+    event.preventDefault();
   }
 
   const formData = new FormData()

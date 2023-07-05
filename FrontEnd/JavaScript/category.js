@@ -22,8 +22,10 @@ fetch('http://localhost:5678/api/works')
 
       figureElement.appendChild(imgElement)
       figureElement.appendChild(figcaptionElement)
+
       figureElement.setAttribute('data-id', categoryDataId)
       figureElement.setAttribute('id', imageId)
+
       figureElement.classList.add('image')
 
       divGallery.appendChild(figureElement)  
@@ -68,14 +70,16 @@ if (storageToken !== null) {
     element.classList.add('showflex')
   })
   modeEditionCategory.classList.add('hide')
-  console.log(storageToken)
+
+// LOGOUT
   loginButton.innerText = 'logout'
+
   loginButton.onclick = (resetToken) => {
-    if (resetToken.target) {
+  if (resetToken.target) {
     localStorage.removeItem('token')
     location.reload()
+    }
   }
-}
 
   } else {
     modeEdition.forEach(element => {
@@ -91,6 +95,7 @@ const modals = document.querySelectorAll("[data-modal]")
 modals.forEach(function (trigger) {
   trigger.addEventListener("click", function (event) {
     event.preventDefault()
+
     const modal = document.getElementById(trigger.dataset.modal)
     modal.classList.add("open")
  
