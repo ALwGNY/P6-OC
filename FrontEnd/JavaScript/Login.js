@@ -37,7 +37,6 @@ login.addEventListener("submit", function(event) {
     .then(function(data) {
       var token = data.token
       localStorage.setItem('token', token)
-      window.location.href='http://127.0.0.1:5500/FrontEnd/index.html'
-  
+      window.location.href='http://127.0.0.1:5500/index.html'
     })
   })
