@@ -1,4 +1,6 @@
 // RECUPERATION DES TRAVAUX
+const storageToken = localStorage.getItem('token')
+
 fetch('http://localhost:5678/api/works')
   .then(response => response.json())
   .then(data => {
@@ -26,6 +28,8 @@ fetch('http://localhost:5678/api/works')
       figureElement.appendChild(figcaptionElement)
       figureElement.appendChild(spanElement)
       divGalleryModal.appendChild(figureElement)
+
+// SUPPRESSION DES TRAVAUX       
 
       spanElement.addEventListener('click', function() {
         divGalleryModal.removeChild(figureElement)
@@ -93,7 +97,6 @@ const fileInput = document.getElementById('file')
   })
 
 // AJOUT DE NOUVEAUX TRAVAUX
-const storageToken = localStorage.getItem('token')
 
 const inputTitle = document.getElementById('title')
 const categoryData = document.getElementById('category')

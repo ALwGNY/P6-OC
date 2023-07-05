@@ -1,3 +1,5 @@
+// RECUPERATION DES TRAVAUX DEPUIS L'API
+
 fetch('http://localhost:5678/api/works')
   .then(response => response.json())
   .then(data => {
@@ -28,6 +30,8 @@ fetch('http://localhost:5678/api/works')
       
     })
 
+// CATEGORY
+
     const filterItem = document.querySelector('.category')
     const filterImg = document.querySelectorAll('.image')
 
@@ -50,6 +54,8 @@ fetch('http://localhost:5678/api/works')
       }
     }
   })
+
+// MODE EDITION / ADMINISTRATEUR
 
 const storageToken = localStorage.getItem('token')
 
@@ -76,6 +82,9 @@ if (storageToken !== null) {
     element.classList.add('hide')
   })
  }
+
+
+// AFFICHAGE DE LA MODAL 
 
 const modals = document.querySelectorAll("[data-modal]")
 
