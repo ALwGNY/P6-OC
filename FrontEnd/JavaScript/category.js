@@ -1,6 +1,7 @@
 // RECUPERATION DES TRAVAUX DEPUIS L'API
+import { API_URL } from "./API_URL.js"
 
-fetch('http://localhost:5678/api/works')
+fetch(`${API_URL}works`)
   .then(response => response.json())
   .then(data => {
     
@@ -81,11 +82,11 @@ if (storageToken !== null) {
     }
   }
 
-  } else {
-    modeEdition.forEach(element => {
-    element.classList.add('hide')
-  })
- }
+ }else {
+  modeEdition.forEach(element => {
+  element.classList.add('hide')
+ })
+}
 
 
 // AFFICHAGE DE LA MODAL 

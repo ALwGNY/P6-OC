@@ -1,7 +1,9 @@
+import { API_URL } from "./API_URL.js"
+
 // RECUPERATION DES TRAVAUX
 const storageToken = localStorage.getItem('token')
 
-fetch('http://localhost:5678/api/works')
+fetch(`${API_URL}works`)
   .then(response => response.json())
   .then(data => {
     const divGalleryModal = document.querySelector('.gallerymodal')
@@ -37,7 +39,7 @@ fetch('http://localhost:5678/api/works')
         if (!deletedImageIds.includes(imageId)) {
           deletedImageIds.push(imageId)
                  
-          fetch(`http://localhost:5678/api/works/${imageId}`, {
+          fetch(`${API_URL}works/${imageId}`, {
             method: 'DELETE',
             headers: {
               'authorization': `Bearer ${storageToken}`
@@ -80,6 +82,7 @@ arrowLeft.addEventListener('click', function(event) {
 })
 
 // IMAGE PREVIEW
+
 const fileInput = document.getElementById('file')
 const inputImg = document.querySelector('.inputimg')
 const imgDesc = document.getElementById('imgdesc')
@@ -109,7 +112,8 @@ addWorks.addEventListener('submit', (event) => {
   const category = categoryData.value
 
   if (!file || !title || !category) {
-    
+
+    event.preventDefault();
     const errorMessage = document.createElement('span')
     const errorDiv = document.getElementById('error')
 
@@ -117,7 +121,6 @@ addWorks.addEventListener('submit', (event) => {
     errorMessage.innerHTML = '* Veulliez remplir tout les champs obligatoire'
 
     errorDiv.appendChild(errorMessage)  
-    event.preventDefault();
   }
 
   const formData = new FormData()
@@ -125,7 +128,7 @@ addWorks.addEventListener('submit', (event) => {
   formData.append('title', title)
   formData.append('category', category)
 
-  fetch('http://localhost:5678/api/works', {
+  fetch(`${API_URL}works`, {
     method: 'POST',
     body: formData,
     headers: {

@@ -1,3 +1,5 @@
+import { API_URL } from "./API_URL.js"
+
 const login = document.getElementById("login")
 const error = document.querySelector('.column')
 const identifier = document.getElementById('identifier')
@@ -10,7 +12,7 @@ login.addEventListener("submit", function(event) {
     var password = document.getElementById("password").value
   
 
-    fetch('http://localhost:5678/api/users/login', {
+    fetch(`${API_URL}users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
